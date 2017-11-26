@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Autospa">
+   <meta name="keywords" content="autospa website">
+   <title>Autospa Web</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+   <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+   <div class="wrapper" style="
+      background: url('../img/img_autospa.jpg'); height: 100%; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;">
+      <div class="block-center mt-xl wd-xl">
+         <!-- START panel-->
+         <div class="panel panel-dark panel-flat">
+            <div class="panel-heading text-center">
+               <a href="#">
+                  <img style="height:80px" src="../img/logo_autospa.png" alt="Image" class="block-center img-rounded">
+               </a>
+            </div>
+            <div class="panel-body">
+               <p class="text-center pv">Registro de Consumo</p>
+               <form id="formulario" role="form">
+                  <div class="form-group has-feedback">
+                     <input id="inputTarjeta" type="text" placeholder="XXXXX-XXXXX-XXXXXX" autocomplete="off" required class="form-control">
+                     <span class="fa fa-credit-card form-control-feedback text-muted"></span>
+                  </div>
+                  <div class="form-group has-feedback">
+                     <input id="inputMonto" type="text" placeholder="0.00" required class="form-control">
+                     <span class="fa fa-dollar form-control-feedback text-muted"></span>
+                  </div>
+                  <input id="inputMCC" type="hidden" required  value="5511" class="form-control">
+                  <input id="inputdDescComercio" type="hidden" required value="LIMAUTOS" class="form-control">
+                  <button onclick="funcionRegistrarConsumo(); return false;" class="btn btn-block btn-primary mt-lg">Registrar</button>
+            </form>
+            </div>
+         </div>
+         <!-- END panel-->
+         <div class="p-lg text-center text-white">
+            <span>&copy;</span>
+            <span>2017</span>
+            <span>-</span>
+            <span>Pizza Club</span>
+            <br>
+            <span>Aplicación de Detección  - Hackathon 2017 IBK</span>
+         </div>
+      </div>
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <!-- MODERNIZR-->
+   <!--<script src="../vendor/modernizr/modernizr.custom.js"></script>-->
+   <!-- JQUERY-->
+   <script src="../vendor/jquery/dist/jquery.js"></script>
+   <!-- BOOTSTRAP-->
+   <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+   <!-- =============== APP SCRIPTS ===============-->
+   <script src="js/app.js"></script>
+</body>
+
+</html>
