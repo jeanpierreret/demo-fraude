@@ -18,6 +18,7 @@ function funcionRegistrarConsumo() {
 
     xhr.onloadend = function () {
         alert("Consumo Registrado");
+        location.reload();
     };
     
     
