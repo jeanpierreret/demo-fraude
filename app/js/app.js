@@ -17,7 +17,7 @@ function funcionRegistrarConsumo() {
     xhr.send(JSON.stringify(data));
 
     xhr.onloadend = function () {
-        // done
+        alert("Consumo Registrado");
     };
     
     
