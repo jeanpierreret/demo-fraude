@@ -4,22 +4,31 @@ function funcionRegistrarConsumo() {
     data['numeroTarjeta'] = document.getElementById("inputTarjeta").value;
     data['monto'] = document.getElementById("inputMonto").value;
     data['comercio'] = document.getElementById("inputMCC").value;
-    data['descComercio'] = document.getElementById("inputdDescComercio").value;
+    data['descConmercio'] = document.getElementById("inputdDescComercio").value;
     
     console.log(data);
-    
-    // construct an HTTP request
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://54.232.200.58:8080/cliente/consumo', true);
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
     // send the collected data as JSON
-    xhr.send(JSON.stringify(data));
 
-    xhr.onloadend = function () {
-        alert("Consumo Registrado");
-        location.reload();
-    };
+    jQuery.ajax({
+        url: "http://54.232.200.58:8080/cliente/consumo?" + jQuery.param({
+            "numeroTarjeta": ''+data["numeroTarjeta"],
+            "descConmercio": ''+data["descConmercio"],
+            "monto": ''+data["monto"],
+            "comercio": ''+data["comercio"]
+        }),
+        type: "POST",
+    })
+        .done(function (data, textStatus, jqXHR) {
+            console.log("HTTP Request Succeeded: " + jqXHR.status);
+            console.log(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("HTTP Request Failed");
+        })
+        .always(function () {
+            /* ... */
+        });
     
     
 }
